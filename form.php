@@ -5,9 +5,9 @@
     // recuperation des informations
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         // recuperation des valeurs dans les champs inputs
-        $name = filter_input(INPUT_POST, 'name');
-        $email = filter_input(INPUT_POST, 'email');
-        $message = filter_input(INPUT_POST, 'commataire');
+        $name = htmlspecialchars(filter_input(INPUT_POST, 'name'));
+        $email = htmlspecialchars(filter_input(INPUT_POST, 'email'));
+        $message = htmlspecialchars(filter_input(INPUT_POST, 'commataire'));
 
         // condition verification
         if($name !== '' && $email !== '' && $message !== '' ) {
